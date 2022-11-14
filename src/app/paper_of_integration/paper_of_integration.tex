@@ -1,0 +1,83 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+
+\title{Analysis and documentation of practice 5A:\\
+Numerical integration with Simpson’s rule and the t distribution}
+\author{Jaime Ivan Avila Muñoz}
+\date{November 2022}
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+{During the development of this document the details to be highlighted will be explained based on practice 5A. The steps for the calculation of the numerical integration with Simpson's rule as well as for the T-distribution will be explained, together with their respective tests and highlights during their application.}
+
+\end{abstract}
+S
+Keywords:
+Simpson´s rule, Numerical Integration, T distribution, formula.
+
+\section{Introduction}
+
+\subsection{Objectives}
+{Calculation of the numerical integration applying Simpson's rule, together with the T distribution, checking the results with the tests suggested in the "issues" located in the Hampty5A repository in github.}
+\subsection{Problem Statement}
+{Within numerical analysis, numerical integration constitutes a wide range of algorithms for computing the numerical value of a definite integral and, by extension, the term is sometimes used to describe numerical algorithms for solving differential equations. 
+In probability and statistics, the t-distribution is a probability distribution that arises from the problem of estimating the mean of a normally distributed population when the sample size is small and the population standard deviation is unknown.
+During this practice, Simpson's rule will help us to give a better resolution to the numerical integration, as well as the T-distribution will be used to reduce the range of error that can be made in finding the "area under the curve".
+Applying the necessary formulas for its calculation, it is expected to achieve the proposed tests.}
+\section{State of the art}
+\subsection{Numerical Integration}
+{There are several reasons for performing numerical integration. The main one may be the impossibility of performing the integration analytically. That is to say, integrals that would require a great knowledge and handling of advanced mathematics can be solved in a simpler way by means of numerical methods. There are even functions that can be integrated but whose primitive cannot be calculated, being the numerical integration of vital importance. The analytical solution of an integral would give us an exact solution, while the numerical solution would give us an approximate solution. The error of the approximation, which depends on the method used and how fine it is, can be so small that it is possible to obtain a result identical to the analytical solution in the first decimal places.}
+{Numerical integration is the process of determining the area “under” some function. Numerical integration calculates this area by dividing it into vertical “strips” and summing their individual areas. The key is to minimize the error in this approximation.}
+\includegraphics{integral}
+{\\Simpson's rule is a method that uses parabolas to approximate the curve instead of drawing linear segments.}
+{Simpson's rule can be used to integrate a symmetrical statistical distribution function over a specified range (e.g., from 0 to some value x).} 
+{The formula to apply it is: \\}
+\includegraphics{simpson}
+{\\Where:}
+\begin{enumerate}
+\item num\_seg = initial number of segments, an even number
+\item W = x/num\_seg, the segment width
+\item E = the acceptable error, e.g., 0.00001
+\end{enumerate}
+\subsection{T distribution}
+{The t distribution is a very important statistical tool. It is used instead of the normal distribution when the true value of the population variance is not known and must be estimated from a sample.}
+{The shape of the t distribution is dependent on the number of points in your dataset. As n gets large, the t distribution approaches the normal distribution. For lower values, it has a lower central “hump” and fatter “tails.”}
+{In other words, the t-distribution is a probability distribution that estimates the value of the mean of a small sample drawn from a population that follows a normal distribution and for which we do not know its standard deviation.\\}
+\includegraphics[width=8cm, height=5cm]{distribuciont}
+{\\When numerically integrating the t distribution with Simpson’s rule, use the following function: \\}
+\includegraphics{formulat}
+{\\Where:}
+\begin{itemize}
+\item dof = degrees of freedom
+\item \includegraphics[width=0.4cm, height=0.4cm]{simbol} is the gamma function
+\end{itemize}
+{The gamma function is}
+{\\ \includegraphics[width=0.4cm, height=0.4cm]{simbol}(x) = (x \includegraphics[width=0.4cm, height=0.4cm]{menos} 1)\includegraphics[width=0.4cm, height=0.4cm]{simbol}(x \includegraphics[width=0.4cm, height=0.4cm]{menos} 1), where: }
+\begin{itemize}
+\item  \includegraphics[width=0.4cm, height=0.4cm]{simbol}(1) = 1
+\item \includegraphics[width=0.4cm, height=0.4cm]{simbol}(1 / 2) = \includegraphics[width=0.4cm, height=0.4cm]{raiz}
+\end{itemize}
+\section{Methodology}
+\subsection{General architecture}
+{\\For the development of the practice, the formulas mentioned above were used and applied to the following tests in order to correctly arrive at the "area under the curve" as accurately as possible:}
+
+{\\We apply the tests corresponding to the practice. For Simpson's rule we will apply the following ones:}
+\begin{itemize}
+\item Should return p=16 if f(x)=2x, x0=0, x1=4, num\_seg=4, dof=0
+\item Should return p=0.33333 if f(x)= x*x, x0=0, x1=1, num\_seg=4, dof=0
+\item Should return p=1.386 if f(x)= 1/x, x0=1, x1=4, num\_seg=6, dof=0
+\end{itemize}
+{\\We apply the tests now for the T-distribution, which are as follows: }
+\begin{itemize}
+\item Should return P=0.35006 if f(x)x0=0, x1=1.1, num\_seg=10, dof=9
+\item Should return P=0.33333 if f(x)x0=0, x1=1.1812, num\_seg=10, dof=10
+\item Should return p=1.386 if f(x)x0=0, x1=2.750, num\_seg=10, dof=30
+\end{itemize}
+\section{Results}
+{As a final result we should obtain the data given in the following table:}\\
+\includegraphics{tabla}
+\end{document}
