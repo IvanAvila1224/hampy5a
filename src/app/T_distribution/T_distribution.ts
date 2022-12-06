@@ -1,24 +1,17 @@
 export function T_distribution(x:number, dof:number) {
-    let result = 0;
-    let num_seg = 10;
-    let w = x/num_seg;
-    let list: number[] = [1,4,2,4,2,4,2,4,2,4,1]
-
-    for (let i=0; i = num_seg+1; i++){
-        x = w+i;
-        let p1 = Math.pow((1+((x*x)/dof)),(-(dof+1)/2));
-        let p2 = gamma((dof+1)/2)/(((Math.pow(dof*Math.PI,0.5)))*(gamma(dof/2)));
-
-        let Fx = p1-p2;
-
-        let Terms = w*list[i]*Fx;
-
-        result = result + Terms;
-
-        return result;
-    }
-    return result;
-
+    let resultFx ;
+  
+          let p1;
+          p1=1+((x*x)/dof);
+          let p2= Math.pow(p1,(((dof+1)/2)*-1));
+          let result= ((gamma(dof+1))
+                  /((Math.pow((dof*Math.PI), 0.5)*(gamma(dof))))
+                  *(Math.pow((1+((x*x)/dof)),((dof+1)/2))));
+          resultFx=p2* result;
+  
+          resultFx = Math.round((resultFx + Number.EPSILON) * 100000) / 100000;
+  
+          return resultFx;
   }
   
   function gamma(n:number){
@@ -35,7 +28,6 @@ export function T_distribution(x:number, dof:number) {
         n=n-2;
         r=r*n/2;
         if(n==2){
-            break;
         }
     }while(n!=1);
     let pi= Math.PI;
