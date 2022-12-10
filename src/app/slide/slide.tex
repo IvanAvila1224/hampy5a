@@ -1,0 +1,109 @@
+\documentclass{purdue-slide}
+
+% For filler text:
+\usepackage[base]{babel}
+\usepackage{graphics}
+\usepackage{lipsum}
+
+
+\title {\tiny }
+\subtitle{\tiny Made with Jaime Ivan Avila Mu˜noz}
+\author{}
+\institute{Analysis and documentation of practice 5A:
+Numerical integration with Simpson’s rule and
+the t distribution}
+\date{\today}
+\renewcommand{\slidefoot}{\LaTeX\ Template}
+
+\begin{document}
+
+\begin{titleframe}{}
+    \maketitle
+\end{titleframe}
+
+\begin{titleframe}{\tiny 1.1 Objectives
+Calculation of the numerical integration applying Simpson’s rule, together with
+the T distribution, checking the results with the tests suggested in the ”issues”
+located in the Hampty5A repository in github.}
+
+{\tiny
+Numerical integration with Simpson’s rule
+
+Numerical integration is the process of determining the area
+“under” some function.
+Numerical integration calculates this area by dividing it into vertical
+“strips” and summing their individual areas.
+The key is to minimize the error in this approximation.}
+
+\includegraphics[width=2 cm, height= 2cm]{image.png}
+   
+\end{titleframe}
+
+\section{Long Text}
+
+\begin{frame}{\tiny Rule Simpson}
+   \tiny Simpson’s rule
+\\1. num_seg = initial number of segments, an even number
+
+\\2. W = x/num_seg, the segment width
+\\3. E = the acceptable error, e.g., 0.00001
+\\4. Compute the integral value with the following equation.
+\\5. Compute the integral value again, but this time with num_seg = num_seg*2.
+\\6. If the difference between these two results is greater than E, double
+\\num_seg and compute the integral value again. Continue doing this until
+\\the difference between the last two results is less than E. The latest result is
+the answer.
+TEST
+
+\\Should return p=16 if f(x)=2x, x0=0, x1=4, num_seg=4, dof=0
+\\Should return p=0.33333 if f(x)= x*x, x0=0, x1=1, num_seg=4, dof=0
+\\Should return p=1.386 if f(x)= 1/x, x0=1, x1=4, num_seg=6, dof=0
+
+    \vspace{\baselineskip}
+    
+   
+\end{frame}
+
+\section{List}
+
+\begin{frame}{T distribution}
+   \tiny The t distribution
+\\The t distribution is a very important statistical tool. It is used instead of \\the normal distribution when the true value of the population variance is not \\known and must be estimated from a sample.
+\\The shape of the t distribution is dependent on the number of points in your \\dataset. As n gets large, the t distribution approaches the normal distribution.
+\\For lower values, it has a lower central “hump” and fatter “tails.”
+\\The t distribution is a very important statistical tool. It is used instead of \\the normal distribution when the true value of the population variance is not \\known and must be estimated from a sample.
+\\The shape of the t distribution is dependent on the number of points in your \\dataset. As n gets large, the t distribution approaches the normal distribution.
+\\For lower values, it has a lower central “hump” and fatter “tails.”
+    \begin{itemize}
+       
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+    \tiny Some introduction of the list.
+    Test
+\\1. First we’ll set num_seg = 10 (any even number)
+\\2. W = x/num_seg = 1.1/10 = 0.11  (any even number)
+\\3. E = 0.00001  (any even number)
+\\4. dof = 9  (any even number)
+\\5. x = 1.1  (any even number)
+\\6. Compute the integral value with the following equation.
+\\7. We can solve the first part of the equation:
+\\Compute the integral value again, but this time with num_seg = 20. The
+\\new result is 0.35005864.
+\\8. We compare the new result to the old result.
+\\9. 0.3500589−0.35005864 < E
+\\10. We can then return the value p =0.35005864.
+\\TEST
+
+\\Should return P=0.35006 if f(x)x0=0, x1=1.1, num_seg=10, dof=9
+ 
+\\Should return P=0.33333 if f(x)x0=0, x1=1.1812, num_seg=10, dof=10
+ 
+\\Should return p=1.386 if f(x)x0=0, x1=2.750, num_seg=10, dof=30
+    
+\end{frame}
+
+
+
+\end{document}
