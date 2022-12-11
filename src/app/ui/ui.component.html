@@ -1,0 +1,152 @@
+<div></div>
+
+<main>
+  <H1> Pruebas de Front-End Hampy5</H1>
+
+
+  <article style="margin: 5rem;">
+    <section class="container" style="
+        border-color: black;
+        border-style: groove;
+        background-color: rgb(142, 211, 64);;
+      ">
+      <h2 style="font-style: italic; font-weight: 700">Pruebas de Simpson y T_distribution</h2>
+
+      <div>
+        <div class="col-sm-3">
+          <div class="card" style="width: 18rem; margin: 1rem 0rem">
+            <div class="card-body">
+              <h2> f puede ser "2x" "x*x" "1/x" </h2>
+              <form>
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <input id="f" [(ngModel)]="f" type="string" class="form-control operator1" name="f"
+                    placeholder="0.0" />
+                </div>
+
+                <h2> x0 </h2>
+
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <input id="x0" [(ngModel)]="x0" type="number" class="form-control operator1" name="x0"
+                    placeholder="0.0" />
+                </div>
+
+                <h2> x1 </h2>
+
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <input id="x1" [(ngModel)]="x1" type="number" class="form-control operator1" name="x1"
+                    placeholder="0.0" />
+                </div>
+
+                <h2> num_seg </h2>
+
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <input id="num_seg" [(ngModel)]="num_seg" type="number" class="form-control operator1" name="num_seg"
+                    placeholder="0.0" />
+                </div>
+
+                <h2> dof </h2>
+
+                <div class="input-group">
+                  <span class="input-group-addon">
+                    <i class="glyphicon glyphicon-pencil"></i>
+                  </span>
+                  <input id="dof" [(ngModel)]="dof" type="number" class="form-control operator1" name="dof"
+                    placeholder="0.0" />
+                </div>
+
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: 20rem; margin: 1rem 0rem">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <button type="button" class="btn btn-primary compute-button" style="
+                  width: 10rem;
+                  height: 4rem;
+                  padding: 0;
+                  margin: 1rem 0rem;
+                ">
+                <li class="list-group-item" (click)="Simpson_rule()" style="
+                    height: 2rem;
+                    margin: 1rem 1rem;
+                    background: none;
+                    border-style: none;
+                  ">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    Simpson
+                  </p>
+                </li>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <div class="card" style="width: 20rem; margin: 1rem 0rem">
+          <div class="card-body">
+            <ul class="list-group list-group-flush">
+              <button type="button" class="btn btn-primary compute-button" style="
+                  width: 10rem;
+                  height: 4rem;
+                  padding: 0;
+                  margin: 1rem 0rem;
+                ">
+                <li class="list-group-item" (click)="T_distribution()" style="
+                    height: 2rem;
+                    margin: 1rem 1rem;
+                    background: none;
+                    border-style: none;
+                  ">
+                  <p style="margin: 0; font-size: 20px; font-weight: 500">
+                    T
+                  </p>
+                </li>
+              </button>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <section>
+          <div class="card text-center" style="width: 20rem; margin: 1rem 0rem">
+            <div class="card-header">Simpson</div>
+            <div class="card-body">
+              <span class="result">{{ TextSimpson }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="col-sm-3">
+        <section>
+          <div class="card text-center" style="width: 20rem; margin: 1rem 0rem">
+            <div class="card-header">T</div>
+            <div class="card-body">
+              <span class="result">{{ TextT }}</span>
+            </div>
+          </div>
+        </section>
+      </div>
+
+    </section>
+  </article>
+
+</main>
