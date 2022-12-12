@@ -27,8 +27,9 @@ export function T_distribution(x:number, dof:number) {
     do{
         n=n-2;
         r=r*n/2;
-        if(n==2){
-        }
+/*        if(n==2){
+            break;
+        }*/
     }while(n!=1);
     let pi= Math.PI;
   
