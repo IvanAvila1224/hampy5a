@@ -1,0 +1,16 @@
+{
+  "hosting": {
+    "public": "dist/hampy5a",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
