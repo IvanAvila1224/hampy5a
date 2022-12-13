@@ -1,36 +1,95 @@
-.calculator {
-    width: 150px;
-    text-align: center;
-    color: #999;
-}
-
-.result {
-    font-size: 3.0em;
-    font-weight: bold;
-    color: red;
-
-}
-
-.operator1 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: black;
+.contenedor1{
+    margin-right: 10vw;
+    display: grid;
+    place-items: center;
+    color: #221f1f;
+    border-radius: 1vh;
+    border-color: #244e92;
+    border-style: solid;
+    margin: 0vw;
 
 }
-
-.operator2 {
-    font-size: 1.5em;
-    font-weight: bold;
-    color: blue;
-
+.input {
+    font-size: em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1vh 0 4vh 0;
 }
 
-.addition-button {
+.icon-input1{
+    font-size: 2.5vh;
+    padding: 0 1vw;
+}
+.icon-input2{
+    font-size: 2.5vh;
+    padding: 0 17.35vw;
+}
+.icon-input3{
+    font-size: 2.5vh;
+    padding: 0 17.35vw;
+}
+.icon-input4{
+    font-size: 2.5vh;
+    padding: 0 14.25vw;
+}
+.icon-input5{
+    font-size: 2.5vh;
+    padding: 0 17vw;
+}
+
+.data-input {
+    width: 30vw;
+    height: 100%;
+    padding: .30em;
+    border-radius: 1vh;
+    border-style: solid;
+    font-size: 1em;
+  }
+
+.gruop-buttons{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.buttons{
+    margin: 0 1vw;
+    height: 4vh;
     cursor: pointer;
-    color: blue;
-}
-.substraction-button {
-    cursor: pointer;
-    color: green;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 6px;
+    font-size: 4vh;
+    color: rgb(14, 17, 219);
+    border-color: #244e92;
+    border-style: solid;
 }
 
+
+.resultS {
+    margin: 2vw;
+    height: 6vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vw;
+    font-size: 4vh;
+    color: rgb(217, 46, 20);
+
+}
+.resultT{
+    margin: 2vw;
+    height: 6vh;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 1vw;
+    font-size: 4vh;
+    color: rgb(217, 46, 20);
+
+}
