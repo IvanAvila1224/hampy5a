@@ -1,0 +1,51 @@
+
+<div class="contenedor1">
+  <form>
+    <div class="input-gruop">
+      <span class="icon-input1"><i>Funcion puede ser "2x" "x*x" "1/x" </i></span>
+      <input type="text" [(ngModel)]="f" class="data-input" name="f">
+    </div>
+    <div>
+      <span class="icon-input2"><i>x0</i></span>
+      <input type="number" [(ngModel)]="x0"  class="data-input" name="x0"
+        placeholder="0.0" />
+    </div>
+
+    <div>
+      <span class="icon-input3"><i>x1</i></span>
+      <input type="number" [(ngModel)]="x1"  class="data-input" name="x1"
+        placeholder="0.0" />
+    </div>
+
+    <div>
+      <span class="icon-input4"><i>num_seg</i></span>
+      <input type="number" [(ngModel)]="num_seg"  class="data-input" name="num_seg"
+        placeholder="0.0" />
+    </div>
+
+    <div>
+      <span class="icon-input5"><i>dof</i></span>
+      <input type="number" [(ngModel)]="dof"  class="data-input" name="dof"
+        placeholder="0.0" />
+    </div>
+  </form>
+
+  <div class="gruop-buttons">
+    <div class="buttons Simpson-button" (click)="Simpson_rule()">
+      <i>Calcular Simpson<Main></Main></i>
+    </div>
+    <div class="buttons T_distribution-button" (click)="T_distribution()">
+      <i>calcular T_distribution</i>
+    </div>
+  </div>
+
+  <div id="result-box">
+    <div class="Simpson-container">
+      <div class="Simpson resultS"><span>Simpson result: </span>{{TextSimpson}}</div>
+    </div>
+    <div class="T_distribution-container">
+      <div class="T_distribution resultT"><span>T_distribution result: </span>{{TextT}}</div>
+    </div>
+  </div>
+</div>
+
